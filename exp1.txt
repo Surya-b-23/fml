@@ -1,0 +1,40 @@
+import pandas as pd 
+
+  
+# Creating new dataframe 
+
+initial_data = {'name': ['harish', 'siva', 'kavin', 'likhit'],  
+
+                'Age': [10,20,35,43],
+                'place':['coimbatore','chennai','mumbai','bangalore'],
+               'qualification':['btech','BE','MBA','MCA']
+}
+
+df = pd.DataFrame(initial_data, columns = ['name', 'Age', 'place','qualification']) 
+
+  
+# Generate result using pandas 
+
+result = [] 
+
+for value in df["Age"]: 
+
+    if value <18: 
+
+        result.append(0) 
+
+    elif value < 25: 
+
+        result.append(1) 
+
+    elif value < 40: 
+
+        result.append(2) 
+
+    else: 
+
+        result.append(3) 
+
+df["Position"] = result    
+
+print(df)
